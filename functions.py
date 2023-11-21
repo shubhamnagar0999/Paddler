@@ -2,13 +2,6 @@ import requests
 import os
 import re
 
-def callAPI(vendorcode):
-    response = requests.get(f'http://192.168.50.81:8080/ap_automation_backend/ocrtraining/get?supplier={vendorcode}&template=Template_1')
-    if response.status_code == 200:
-        return response.text
-    else:
-        print(response.status_code)
-
 
 # --->delete file<---
 def deleteFile(pdf_path):

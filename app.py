@@ -1,5 +1,5 @@
 import re
-from flask import Flask,request
+from flask import Flask, jsonify,request
 import cv2
 import layoutparser as lp
 from paddleocr import PaddleOCR, draw_ocr
@@ -23,11 +23,12 @@ CORS(app, resources={r"/*": {"origins": "*"}})
 
 @app.route("/paddler", methods=['POST'])
 def paddler():
+    json_data = request.form.get('json_data')
 
-    vendorcode = request.args.get('vendorcode')
-    # vendorname = request.args.get('vendorname')
+    print(json_data)
 
-    trained_template = json.loads(callAPI(vendorcode))
+    # trained_template = json.loads(callAPI(vendorcode))
+    trained_template = json.loads(json_data)
     cropped_image_path = ""
     pdf_path = ""
 
