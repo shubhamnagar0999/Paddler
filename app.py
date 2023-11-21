@@ -9,7 +9,7 @@ import pandas as pd
 from pathlib import Path
 import os
 from pdf2image import convert_from_path
-from functions import callAPI,deleteFile,find_indices,getIndexofItems,auto_detect_type,serialNumberLogic,blankSpaceLogic,getIndexofItems_2,blankSpaceLogic_2
+from functions import deleteFile,find_indices,getIndexofItems,auto_detect_type,serialNumberLogic,blankSpaceLogic,getIndexofItems_2,blankSpaceLogic_2
 import json
 from flask_cors import CORS
 from PIL import Image
@@ -417,4 +417,4 @@ def paddler():
 
 
 if __name__ == "__main__":
-    app.run(debug=False)
+    app.run(debug=False,host='0.0.0.0', port=9000)
